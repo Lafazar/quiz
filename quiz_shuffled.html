@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0f;
+      --surface: #16161a;
+      --border: #2a2a32;
+      --accent: #e8ff47;
+      --accent-dim: rgba(232, 255, 71, 0.12);
+      --text: #f0f0f0;
+      --muted: #6b6b7a;
+      --correct: #4ade80;
+      --wrong: #f87171;
+      --radius: 12px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 24px;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(232,255,71,0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── CONFIG BAR ── */
+    #config-bar {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 640px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 10px 14px;
+    }
+
+    #config-bar label {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    #filename-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      padding: 2px 4px;
+      outline: none;
+      transition: border-color 0.2s;
+      min-width: 0;
+    }
+
+    #filename-input:focus { border-color: var(--accent); }
+    #filename-input::placeholder { color: var(--muted); }
+
+    #load-btn {
+      background: var(--accent);
+      color: #0d0d0f;
+      border: none;
+      border-radius: 6px;
+      padding: 5px 14px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: opacity 0.15s;
+    }
+    #load-btn:hover { opacity: 0.85; }
+
+    #config-status { font-size: 11px; white-space: nowrap; flex-shrink: 0; }
+    #config-status.ok  { color: var(--correct); }
+    #config-status.err { color: var(--wrong); }
+
+    /* ── APP WRAPPER ── */
+    #app {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 640px;
+    }
+
+    /* ── UPLOAD SCREEN ── */
+    #upload-screen { text-align: center; animation: fadeUp 0.5s ease both; }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 10vw, 80px);
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    .upload-box {
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+    }
+
+    .upload-box:hover, .upload-box.drag-over {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    .upload-box input[type="file"] {
+      position: absolute; inset: 0; opacity: 0;
+      cursor: pointer; width: 100%; height: 100%;
+    }
+
+    .upload-icon { font-size: 40px; margin-bottom: 16px; }
+    .upload-box h2 { font-size: 18px; font-weight: 500; margin-bottom: 8px; }
+    .upload-box p  { color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+    .format-hint {
+      margin-top: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      text-align: left;
+    }
+
+    .format-hint h3 {
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 12px;
+    }
+
+    .format-hint code {
+      display: block; font-size: 12px; color: var(--muted);
+      line-height: 1.8; font-family: 'Courier New', monospace;
+    }
+
+    .error-msg { margin-top: 16px; color: var(--wrong); font-size: 13px; }
+
+    /* ── QUIZ SCREEN ── */
+    #quiz-screen { display: none; animation: fadeUp 0.4s ease both; }
+
+    .progress-bar-wrap {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 28px;
+    }
+
+    .progress-bar {
+      flex: 1; height: 4px; background: var(--border);
+      border-radius: 99px; overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%; background: var(--accent);
+      border-radius: 99px; transition: width 0.4s ease;
+    }
+
+    .progress-label { font-size: 12px; color: var(--muted); white-space: nowrap; font-weight: 500; }
+
+    .question-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    .question-number {
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 16px;
+    }
+
+    .question-text {
+      font-size: clamp(17px, 3vw, 21px); font-weight: 500;
+      line-height: 1.5; margin-bottom: 24px;
+    }
+
+    .options { display: grid; gap: 8px; }
+
+    .option-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      padding: 12px 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px; font-weight: 400;
+      text-align: left; cursor: pointer;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+      display: flex; align-items: center; gap: 12px;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+      transform: translateX(3px);
+    }
+
+    .option-btn:disabled { cursor: default; }
+
+    .opt-letter {
+      width: 26px; height: 26px; border-radius: 6px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.05em;
+      flex-shrink: 0;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+
+    /* Selected answer — neutral highlight, no correct/wrong reveal */
+    .option-btn.selected-answer {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+    .option-btn.selected-answer .opt-letter {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #0d0d0f;
+    }
+
+    .next-btn {
+      margin-top: 20px; width: 100%; padding: 15px;
+      background: var(--accent); color: #0d0d0f;
+      border: none; border-radius: var(--radius);
+      font-family: 'Bebas Neue', sans-serif; font-size: 20px;
+      letter-spacing: 0.08em; cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+      display: none;
+    }
+    .next-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* ── RESULT SCREEN ── */
+    #result-screen { display: none; text-align: center; animation: fadeUp 0.5s ease both; }
+
+    .result-ring {
+      position: relative; width: 160px; height: 160px; margin: 0 auto 28px;
+    }
+    .result-ring svg { transform: rotate(-90deg); }
+    .result-ring .ring-bg  { fill: none; stroke: var(--border); stroke-width: 10; }
+    .result-ring .ring-fill {
+      fill: none; stroke: var(--accent); stroke-width: 10; stroke-linecap: round;
+      stroke-dasharray: 408; stroke-dashoffset: 408;
+      transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .ring-label {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .ring-score { font-family: 'Bebas Neue', sans-serif; font-size: 44px; color: var(--accent); line-height: 1; }
+    .ring-total { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    .result-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 8vw, 52px); letter-spacing: 0.04em; margin-bottom: 10px;
+    }
+    .result-subtitle { color: var(--muted); font-size: 14px; line-height: 1.6; margin-bottom: 28px; }
+
+    .result-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 28px;
+    }
+    .stat-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 14px;
+    }
+    .stat-value { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--accent); line-height: 1; }
+    .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+
+    /* ── SUMMARY ── */
+    .summary-section { margin-bottom: 28px; text-align: left; }
+    .summary-title {
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 12px;
+    }
+    .summary-list { display: grid; gap: 8px; }
+
+    .summary-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 14px 16px;
+      display: grid; grid-template-columns: 24px 1fr auto;
+      align-items: start; gap: 12px;
+    }
+    .summary-item.correct-item { border-color: rgba(74,222,128,0.35); }
+    .summary-item.wrong-item   { border-color: rgba(248,113,113,0.35); }
+
+    .summary-num { font-size: 11px; color: var(--muted); font-weight: 600; padding-top: 2px; }
+
+    .summary-q { font-size: 13px; line-height: 1.5; }
+    .summary-q .your-ans {
+      display: block; margin-top: 4px; font-size: 12px;
+    }
+    .your-ans.ok  { color: var(--correct); }
+    .your-ans.no  { color: var(--wrong); }
+    .correct-hint { display: block; font-size: 11px; color: var(--correct); margin-top: 2px; }
+
+    .summary-icon { font-size: 16px; padding-top: 1px; }
+
+    /* ── ACTIONS ── */
+    .action-btns { display: flex; gap: 12px; }
+
+    .btn-primary {
+      flex: 1; padding: 15px;
+      background: var(--accent); color: #0d0d0f; border: none;
+      border-radius: var(--radius); font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px; letter-spacing: 0.08em; cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-secondary {
+      padding: 15px 22px; background: transparent; color: var(--muted);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-secondary:hover { border-color: var(--text); color: var(--text); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── CONFIG BAR (always at top) ── -->
+<div id="config-bar">
+  <label for="filename-input">Questions file:</label>
+  <input type="text" id="filename-input" placeholder="questions.txt" spellcheck="false"/>
+  <button id="load-btn">LOAD</button>
+  <span id="config-status"></span>
+</div>
+
+<div id="app">
+
+  <!-- UPLOAD SCREEN -->
+  <div id="upload-screen">
+    <div class="logo">QUIZ</div>
+    <p class="tagline">Load your questions &amp; test yourself</p>
+
+    <div class="upload-box" id="upload-box">
+      <input type="file" id="file-input" accept=".txt"/>
+      <div class="upload-icon">📄</div>
+      <h2>Drop your questions.txt here</h2>
+      <p>Or click to browse &mdash; or enter the filename above and click Load</p>
+    </div>
+
+    <div id="error-msg" class="error-msg"></div>
+
+    <div class="format-hint">
+      <h3>Expected file format</h3>
+      <code>
+        # Lines starting with # are ignored<br>
+        Question | Correct Answer | Wrong 1 | Wrong 2 | &hellip; (up to 8 answers total)<br>
+        <br>
+        What is 2+2? | 4 | 3 | 5 | 6<br>
+        Capital of Japan? | Tokyo | Seoul | Beijing | Bangkok
+      </code>
+    </div>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div id="quiz-screen">
+    <div class="progress-bar-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <span class="progress-label" id="progress-label"></span>
+    </div>
+
+    <div class="question-card">
+      <div class="question-number" id="question-number"></div>
+      <div class="question-text" id="question-text"></div>
+      <div class="options" id="options"></div>
+      <button class="next-btn" id="next-btn">NEXT QUESTION &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div id="result-screen">
+    <div class="result-ring">
+      <svg width="160" height="160" viewBox="0 0 160 160">
+        <circle class="ring-bg" cx="80" cy="80" r="65"/>
+        <circle class="ring-fill" id="ring-fill" cx="80" cy="80" r="65"/>
+      </svg>
+      <div class="ring-label">
+        <div class="ring-score" id="ring-score"></div>
+        <div class="ring-total" id="ring-total"></div>
+      </div>
+    </div>
+
+    <div class="result-title" id="result-title"></div>
+    <p class="result-subtitle" id="result-subtitle"></p>
+
+    <div class="result-stats">
+      <div class="stat-box"><div class="stat-value" id="stat-correct"></div><div class="stat-label">Correct</div></div>
+      <div class="stat-box"><div class="stat-value" id="stat-wrong"></div><div class="stat-label">Wrong</div></div>
+      <div class="stat-box"><div class="stat-value" id="stat-pct"></div><div class="stat-label">Score</div></div>
+    </div>
+
+    <div class="summary-section">
+      <div class="summary-title">Question Summary</div>
+      <div class="summary-list" id="summary-list"></div>
+    </div>
+
+    <div class="action-btns">
+      <button class="btn-primary" id="retry-btn">PLAY AGAIN</button>
+      <button class="btn-secondary" id="new-file-btn">New File</button>
+    </div>
+  </div>
+
+</div><!-- /#app -->
+
+<script>
+// ═══════════════════════════════════════════════════════
+//  CONFIG — set DEFAULT_FILENAME to auto-load on open
+// ═══════════════════════════════════════════════════════
+const DEFAULT_FILENAME = '';   // e.g. 'questions.txt'
+
+// ── Session storage keys ───────────────────────────────
+const SK = {
+  questions : 'quiz_questions',
+  current   : 'quiz_current',
+  answers   : 'quiz_answers',   // { "0": "chosen", "2": "chosen", … }
+  screen    : 'quiz_screen',    // 'quiz' | 'result'
+  filename  : 'quiz_filename',
+  seed      : 'quiz_seed',      // integer seed for reproducible shuffle
+};
+
+// ── Runtime state ──────────────────────────────────────
+let questions = [];
+let current   = 0;
+let answers   = {};
+let rngSeed   = 0;
+
+const LETTERS = ['A','B','C','D','E','F','G','H'];
+
+// ── Persist ────────────────────────────────────────────
+function save() {
+  sessionStorage.setItem(SK.questions, JSON.stringify(questions));
+  sessionStorage.setItem(SK.current,   String(current));
+  sessionStorage.setItem(SK.answers,   JSON.stringify(answers));
+  sessionStorage.setItem(SK.seed,      String(rngSeed));
+}
+
+// ── Seeded PRNG (mulberry32) ───────────────────────────
+// Returns a deterministic float in [0, 1) given a mutable seed state.
+function mulberry32(seed) {
+  // Returns a closure that yields the next value each call
+  let s = seed >>> 0;
+  return function() {
+    s += 0x6D2B79F5;
+    let t = Math.imul(s ^ (s >>> 15), 1 | s);
+    t ^= t + Math.imul(t ^ (t >>> 7), 61 | t);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+let rng = mulberry32(0); // replaced whenever a seed is set
+
+function newSeed() {
+  rngSeed = (Math.random() * 2**32) >>> 0;
+  rng = mulberry32(rngSeed);
+}
+
+function restoreSeed(seed) {
+  rngSeed = seed >>> 0;
+  rng = mulberry32(rngSeed);
+}
+
+// ── Shuffle (uses seeded rng) ──────────────────────────
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// ── Parse txt ──────────────────────────────────────────
+function parseQuestions(text) {
+  const result = [];
+  for (const raw of text.split('\n')) {
+    const line = raw.trim();
+    if (!line || line.startsWith('#')) continue;
+    const parts = line.split('|').map(s => s.trim()).filter(Boolean);
+    if (parts.length < 3) continue;
+    const question = parts[0];
+    const correct  = parts[1];
+    // allow up to 7 wrong answers → 8 options total
+    const wrongs   = parts.slice(2, 9);
+    const options  = shuffle([correct, ...wrongs]);
+    result.push({ question, correct, options });
+  }
+  return result;
+}
+
+// ── Screen switcher ────────────────────────────────────
+const SCREEN_IDS = { upload:'upload-screen', quiz:'quiz-screen', result:'result-screen' };
+
+function show(name) {
+  Object.values(SCREEN_IDS).forEach(id => {
+    const el = document.getElementById(id);
+    el.style.display = 'none';
+    el.style.animation = 'none';
+  });
+  const target = document.getElementById(SCREEN_IDS[name]);
+  target.style.display = 'block';
+  void target.offsetWidth;       // force reflow → restart animation
+  target.style.animation = '';
+  sessionStorage.setItem(SK.screen, name);
+}
+
+// ── Config bar: load by filename ──────────────────────
+const filenameInput = document.getElementById('filename-input');
+const loadBtn       = document.getElementById('load-btn');
+const configStatus  = document.getElementById('config-status');
+
+async function loadByFilename(name, isRestore) {
+  if (!name) return false;
+  configStatus.className   = '';
+  configStatus.textContent = 'Loading\u2026';
+  try {
+    const res = await fetch(name);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const text   = await res.text();
+    const parsed = parseQuestions(text);
+    if (parsed.length === 0) throw new Error('No valid questions found');
+
+    if (!isRestore) {
+      // Fresh load — wipe old session, generate new seed
+      newSeed();
+      sessionStorage.removeItem(SK.answers);
+      sessionStorage.removeItem(SK.current);
+      sessionStorage.removeItem(SK.screen);
+      questions = parsed;
+      answers   = {};
+      current   = 0;
+      save();
+      sessionStorage.setItem(SK.filename, name);
+      document.getElementById('error-msg').textContent = '';
+      configStatus.className   = 'ok';
+      configStatus.textContent = `\u2713 ${parsed.length} questions`;
+      startQuiz();
+    } else {
+      // Just confirming file is loadable; state is already restored from session
+      configStatus.className   = 'ok';
+      configStatus.textContent = `\u2713 ${questions.length} questions`;
+    }
+    return true;
+  } catch(e) {
+    configStatus.className   = 'err';
+    configStatus.textContent = `\u2717 ${e.message}`;
+    return false;
+  }
+}
+
+loadBtn.addEventListener('click', () => {
+  const name = filenameInput.value.trim();
+  if (!name) { configStatus.className='err'; configStatus.textContent='Enter a filename'; return; }
+  loadByFilename(name, false);
+});
+filenameInput.addEventListener('keydown', e => { if (e.key === 'Enter') loadBtn.click(); });
+
+// ── File upload (drag/browse) ──────────────────────────
+const fileInput = document.getElementById('file-input');
+const uploadBox = document.getElementById('upload-box');
+const errorMsg  = document.getElementById('error-msg');
+
+fileInput.addEventListener('change', e => handleFile(e.target.files[0]));
+uploadBox.addEventListener('dragover',  e => { e.preventDefault(); uploadBox.classList.add('drag-over'); });
+uploadBox.addEventListener('dragleave', () => uploadBox.classList.remove('drag-over'));
+uploadBox.addEventListener('drop', e => {
+  e.preventDefault();
+  uploadBox.classList.remove('drag-over');
+  handleFile(e.dataTransfer.files[0]);
+});
+
+function handleFile(file) {
+  if (!file) return;
+  if (!file.name.endsWith('.txt')) { errorMsg.textContent = '\u26a0 Please upload a .txt file.'; return; }
+  const reader = new FileReader();
+  reader.onload = e => {
+    const parsed = parseQuestions(e.target.result);
+    if (parsed.length === 0) { errorMsg.textContent = '\u26a0 No valid questions found. Check the format.'; return; }
+    errorMsg.textContent = '';
+    newSeed();
+    sessionStorage.removeItem(SK.answers);
+    sessionStorage.removeItem(SK.current);
+    sessionStorage.removeItem(SK.screen);
+    questions = parsed;
+    answers   = {};
+    current   = 0;
+    save();
+    configStatus.className   = 'ok';
+    configStatus.textContent = `\u2713 ${parsed.length} questions`;
+    startQuiz();
+  };
+  reader.readAsText(file);
+}
+
+// ── Quiz ───────────────────────────────────────────────
+function startQuiz() {
+  current = 0;
+  answers = {};
+  save();
+  show('quiz');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q          = questions[current];
+  const isAnswered = Object.prototype.hasOwnProperty.call(answers, current);
+  const doneCount  = Object.keys(answers).length;
+
+  // Progress bar reflects answered count
+  const pct = (doneCount / questions.length) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-label').textContent =
+    `${doneCount} / ${questions.length} answered`;
+
+  document.getElementById('question-number').textContent =
+    `Question ${current + 1} of ${questions.length}`;
+  document.getElementById('question-text').textContent = q.question;
+
+  const nextBtn = document.getElementById('next-btn');
+  nextBtn.style.display = isAnswered ? 'block' : 'none';
+  nextBtn.textContent   =
+    current === questions.length - 1 ? 'SEE RESULTS \u2192' : 'NEXT QUESTION \u2192';
+
+  const optWrap = document.getElementById('options');
+  optWrap.innerHTML = '';
+
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+
+    const letterEl = document.createElement('span');
+    letterEl.className   = 'opt-letter';
+    letterEl.textContent = LETTERS[i] || String(i + 1);
+
+    const textNode = document.createTextNode(opt);
+    btn.appendChild(letterEl);
+    btn.appendChild(textNode);
+
+    if (isAnswered) {
+      btn.disabled = true;
+      if (opt === answers[current]) btn.classList.add('selected-answer');
+    } else {
+      btn.addEventListener('click', () => selectAnswer(opt));
+    }
+    optWrap.appendChild(btn);
+  });
+}
+
+function selectAnswer(chosen) {
+  if (Object.prototype.hasOwnProperty.call(answers, current)) return;
+  answers[current] = chosen;
+  save();
+
+  // Re-render locked state
+  document.querySelectorAll('#options .option-btn').forEach(btn => {
+    // Get the text after the letter badge
+    const letter   = btn.querySelector('.opt-letter');
+    const optText  = btn.childNodes[1] ? btn.childNodes[1].textContent.trim() : '';
+    btn.disabled   = true;
+    btn.onclick     = null;
+    if (optText === chosen) btn.classList.add('selected-answer');
+  });
+
+  // Show next button & update progress
+  const doneCount = Object.keys(answers).length;
+  document.getElementById('next-btn').style.display = 'block';
+  document.getElementById('progress-fill').style.width =
+    (doneCount / questions.length) * 100 + '%';
+  document.getElementById('progress-label').textContent =
+    `${doneCount} / ${questions.length} answered`;
+}
+
+document.getElementById('next-btn').addEventListener('click', () => {
+  current++;
+  save();
+  if (current < questions.length) {
+    renderQuestion();
+  } else {
+    showResults();
+  }
+});
+
+// ── Results ────────────────────────────────────────────
+function showResults() {
+  sessionStorage.setItem(SK.screen, 'result');
+  show('result');
+
+  const total = questions.length;
+  let   score = 0;
+  questions.forEach((q, i) => { if (answers[i] === q.correct) score++; });
+  const wrong = total - score;
+  const pct   = Math.round((score / total) * 100);
+
+  document.getElementById('ring-score').textContent   = score;
+  document.getElementById('ring-total').textContent   = `of ${total}`;
+  document.getElementById('stat-correct').textContent = score;
+  document.getElementById('stat-wrong').textContent   = wrong;
+  document.getElementById('stat-pct').textContent     = pct + '%';
+
+  const fill   = document.getElementById('ring-fill');
+  const offset = 408 - (408 * pct / 100);
+  setTimeout(() => fill.style.strokeDashoffset = offset, 50);
+
+  let title, subtitle;
+  if      (pct === 100) { title = 'PERFECT!';   subtitle = 'Flawless \u2014 you aced every single question.'; }
+  else if (pct >= 80)   { title = 'EXCELLENT';  subtitle = 'Outstanding performance. Just a couple slipped through.'; }
+  else if (pct >= 60)   { title = 'WELL DONE';  subtitle = 'Solid effort! Room to push even higher next time.'; }
+  else if (pct >= 40)   { title = 'KEEP GOING'; subtitle = 'A decent start \u2014 revisit the tricky ones and retry.'; }
+  else                  { title = 'TRY AGAIN';  subtitle = "Don\u2019t sweat it \u2014 practice makes perfect."; }
+
+  document.getElementById('result-title').textContent    = title;
+  document.getElementById('result-subtitle').textContent = subtitle;
+
+  // Per-question summary
+  const list = document.getElementById('summary-list');
+  list.innerHTML = '';
+
+  questions.forEach((q, i) => {
+    const chosen    = answers[i];
+    const isCorrect = chosen === q.correct;
+
+    const item = document.createElement('div');
+    item.className = `summary-item ${isCorrect ? 'correct-item' : 'wrong-item'}`;
+
+    const numEl = document.createElement('span');
+    numEl.className   = 'summary-num';
+    numEl.textContent = i + 1;
+
+    const bodyEl = document.createElement('div');
+    bodyEl.className = 'summary-q';
+
+    const qText = document.createElement('span');
+    qText.textContent = q.question;
+    bodyEl.appendChild(qText);
+
+    const ansEl = document.createElement('span');
+    ansEl.className   = `your-ans ${isCorrect ? 'ok' : 'no'}`;
+    ansEl.textContent = `Your answer: ${chosen || '\u2014'}`;
+    bodyEl.appendChild(ansEl);
+
+    if (!isCorrect) {
+      const hintEl = document.createElement('span');
+      hintEl.className   = 'correct-hint';
+      hintEl.textContent = `\u2713 Correct: ${q.correct}`;
+      bodyEl.appendChild(hintEl);
+    }
+
+    const iconEl = document.createElement('span');
+    iconEl.className   = 'summary-icon';
+    iconEl.textContent = isCorrect ? '\u2705' : '\u274c';
+
+    item.appendChild(numEl);
+    item.appendChild(bodyEl);
+    item.appendChild(iconEl);
+    list.appendChild(item);
+  });
+}
+
+document.getElementById('retry-btn').addEventListener('click', () => {
+  // New seed → different order and option arrangement each attempt
+  newSeed();
+  questions = questions.map(q => ({
+    ...q,
+    options: shuffle([q.correct, ...q.options.filter(o => o !== q.correct)])
+  }));
+  startQuiz();
+});
+
+document.getElementById('new-file-btn').addEventListener('click', () => {
+  sessionStorage.clear();
+  questions = []; answers = {}; current = 0;
+  fileInput.value      = '';
+  filenameInput.value  = '';
+  configStatus.textContent = '';
+  show('upload');
+});
+
+// ══════════════════════════════════════════════════════
+//  INIT — restore session or auto-load default file
+// ══════════════════════════════════════════════════════
+(async function init() {
+  // Restore filename bar
+  const savedFilename = sessionStorage.getItem(SK.filename) || DEFAULT_FILENAME;
+  if (savedFilename) filenameInput.value = savedFilename;
+
+  // Attempt to restore in-progress session
+  const savedQ = sessionStorage.getItem(SK.questions);
+  if (savedQ) {
+    try {
+      const parsedQ = JSON.parse(savedQ);
+      if (parsedQ && parsedQ.length > 0) {
+        questions = parsedQ;
+        answers   = JSON.parse(sessionStorage.getItem(SK.answers) || '{}');
+        current   = parseInt(sessionStorage.getItem(SK.current) || '0', 10);
+        const savedSeed = parseInt(sessionStorage.getItem(SK.seed) || '0', 10);
+        restoreSeed(savedSeed);
+        const screen = sessionStorage.getItem(SK.screen);
+
+        configStatus.className   = 'ok';
+        configStatus.textContent = `\u2713 ${questions.length} questions`;
+
+        if (screen === 'result') {
+          show('result');
+          showResults();
+        } else {
+          show('quiz');
+          renderQuestion();
+        }
+        return;
+      }
+    } catch(e) { /* fall through */ }
+  }
+
+  // No valid session — try to auto-load filename
+  if (savedFilename) {
+    const ok = await loadByFilename(savedFilename, false);
+    if (ok) return;
+  }
+
+  show('upload');
+})();
+</script>
+</body>
+</html>
