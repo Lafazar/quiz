@@ -15,6 +15,7 @@ Was ist ein „Quasar“? | Ein grosses schwarzes Loch, das Licht aussendet | Ei
 Welches dieser Werke stammt von William Shakespeare? | Macbeth | Die Räuber | Nathan der Weise | Faust
 Was beschreibt das „Pareto-Prinzip“? | 80/20-Regel | Gleichgewicht in Märkten | Evolutionäre Anpassung | Ursache-Wirkungs-Ketten
 Welches Gas macht den größten Anteil der Erdatmosphäre aus? | Stickstoff | Kohlendioxid | Argon | Sauerstoff
+Wer war der erste römische Kaiser? | Augustus | Julius Caesar | Nero | Caligula
 Wer malte „Die Nachtwache“? | Rembrandt van Rijn | Johannes Vermeer | Peter Paul Rubens | Vincent van Gogh
 Was ist die Hauptstadt von Kasachstan (Stand heute)? | Astana | Taschkent | Bischkek | Almaty
 In welchem Organ des menschlichen Körpers wird Insulin produziert? | Bauchspeicheldrüse | Milz | Leber | Niere
@@ -28,6 +29,7 @@ Was ist ein „Isotop“? | Atome mit gleicher Protonenzahl, aber unterschiedlic
 Welcher Film gehört zur „Indiana Jones“-Reihe? | Raiders of the Lost Ark | The Mummy | National Treasure | Tomb Raider
 Welcher Ozean ist der größte der Erde? | Pazifik | Arktischer Ozean | Atlantik | Indischer Ozean
 Wer schrieb „1984“? | George Orwell | Ray Bradbury | Jules Verne | Aldous Huxley
+Welche Stadt wurde durch den Vesuvausbruch 79 n. Chr. zerstört? | Pompeji | Athen | Karthago | Alexandria
 Was ist ein „Blackout“ im Energienetz? | Ein kompletter Zusammenbruch der Stromversorgung | Ein Überspannungsschaden | Ein Softwarefehler | Ein kurzfristiger Stromausfall
 Welcher dieser Staaten ist eine Inselnation? | Island | Norwegen | Vietnam | Portugal
 Was bedeutet „DNA“ ausgeschrieben? | Deoxyribonucleic Acid | Digital Network Array | Dual Nucleotide Assembly | Dynamic Neural Axis
@@ -41,6 +43,7 @@ Wer entdeckte das Penicillin? | Alexander Fleming | Marie Curie | Gregor Mendel 
 Wer führte Regie bei „Jurassic Park“? | Steven Spielberg | George Lucas | James Cameron | Ridley Scott
 Was bezeichnet man als „Pyrrhussieg“? | Einen Sieg mit verheerenden eigenen Verlusten | Einen unerwarteten Sieg | Einen schnellen Sieg | Einen Sieg ohne Verluste
 Welches dieser Elemente ist ein Edelgas? | Helium | Wasserstoff | Sauerstoff | Stickstoff
+Wer überschritt den Rubikon und löste einen Bürgerkrieg aus? | Julius Caesar | Pompeius | Cicero | Brutus
 Welche Stadt war Hauptstadt des Byzantinischen Reiches? | Konstantinopel | Alexandria | Rom | Athen
 Was ist die SI-Einheit der Kraft? | Newton | Watt | Joule | Pascal
 Wer schrieb „Die Verwandlung“? | Franz Kafka | Thomas Mann | Hermann Hesse | Stefan Zweig
@@ -130,6 +133,7 @@ Welches Ziel hatte die Berliner Mauer? | Flucht verhindern | Angriff vorbereiten
 Welche Aussage über die Zahl 0 ist korrekt? | Sie ist weder positiv noch negativ | Sie ist eine Primzahl | Sie ist irrational | Sie ist eine natürliche Zahl in allen Definitionen
 Wer entwickelte das heliozentrische Weltbild in seiner modernen Form? | Nikolaus Kopernikus | Johannes Kepler | Tycho Brahe | Galileo Galilei
 Was beschreibt das „Fermi-Paradoxon“? | Den Widerspruch zwischen hoher Wahrscheinlichkeit außerirdischen Lebens und fehlenden Beweisen | Die unerklärbare Stabilität von Atomen | Die Expansion des Universums | Die Unmöglichkeit von Zeitreisen
+Wer war bekannt für seine grausame Herrschaft und soll Rom angezündet haben? | Nero | Caligula | Tiberius | Claudius
 Was ist ein „Laplace-Dämon“? | Ein hypothetisches Wesen, das bei vollständigem Wissen die Zukunft exakt berechnen könnte | Ein physikalisches Teilchen | Ein logisches Paradoxon | Ein mathematischer Fehler
 Welcher dieser Begriffe stammt aus der Spieltheorie? | Nash-Gleichgewicht | Photosynthese | Entropie | Schwarzes Loch
 Was ist die Hauptstadt von Brasilien? | Brasília | Salvador | Rio de Janeiro | São Paulo
@@ -159,6 +163,7 @@ Was ist ein „Paradoxon“? | Eine scheinbar widersprüchliche Aussage | Eine m
 Welches Ereignis löste den 2. Weltkrieg aus? | deutscher Überfall auf Polen | Angriff auf Frankreich | Anschluss Österreichs | Münchner Abkommen
 Welcher dieser Staaten ist flächenmäßig der größte? | Russland | Kanada | China | USA
 Was ist ein „Integral“ in der Mathematik? | Eine Fläche unter einer Kurve | Eine Gleichung | Eine Zahl ohne Dezimalstellen | Eine Ableitung
+Welcher berühmte Feldherr kämpfte gegen Rom im Zweiten Punischen Krieg? | Hannibal | Alexander der Große | Spartakus | Perikles
 Welche dieser Aussagen über Schwarze Löcher ist korrekt? | Sie senden kein Licht aus | Sie bestehen aus normaler Materie | Sie sind unendlich groß | Sie existieren nur theoretisch
 Wer entwickelte die Evolutionstheorie unabhängig von Charles Darwin ebenfalls? | Alfred Russel Wallace | Louis Pasteur | James Watson | Gregor Mendel
 Was beschreibt der Begriff „Photosynthese“ im Kern? | Aufbau von Glukose aus CO₂ und Wasser mithilfe von Licht | Zellteilung | Sauerstoffverbrauch | Abbau von Glukose
@@ -171,6 +176,7 @@ Wer schrieb „Die Kritik der reinen Vernunft“? | Immanuel Kant | Arthur Schop
 Welcher Film enthält die Figur „Ellen Ripley“? | Alien | Blade Runner | The Matrix | Terminator 2
 Was beschreibt die Lichtbrechung? | Ablenkung von Licht beim Übergang zwischen Medien | Absorption von Licht | Streuung von Licht | Reflexion von Licht
 Welche dieser Aussagen zur Wahrscheinlichkeit ist korrekt? | Wahrscheinlichkeiten liegen zwischen 0 und 1 | Wahrscheinlichkeiten sind immer 0 oder 1 | Wahrscheinlichkeiten können größer als 1 sein | Wahrscheinlichkeiten können negativ sein
+Wer war Spartakus? | Anführer eines Sklavenaufstands | Kaiser | Senator | Feldherr gegen Griechen
 Welcher dieser Begriffe stammt aus der Linguistik? | Morphem | Atom | Vektor | Molekül
 Was ist ein „Eukaryot“? | Eine Zelle mit Zellkern | Ein Bakterium | Ein Virus | Eine Zelle ohne Zellkern
 Welche dieser Aussagen über die Erdrotation ist korrekt? | Die Erde rotiert von West nach Ost | Die Erde rotiert nicht um ihre eigene Achse | Die Erde steht still | Die Erde rotiert von Ost nach West
