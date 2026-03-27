@@ -2,6 +2,7 @@ Welches Element hat die höchste Elektronegativität? | Fluor | Sauerstoff | Chl
 Wer schrieb den Roman „Der Steppenwolf“? | Hermann Hesse | Bertolt Brecht | Thomas Mann | Franz Kafka
 Welches dieser Länder war nie Teil der Sowjetunion? | Polen | Kasachstan | Estland | Georgien
 In welchem Jahr fiel die Berliner Mauer? | 1989 | 1990 | 1991 | 1987
+Welches Ereignis löste den 1. Weltkrieg unmittelbar aus? | Attentat von Sarajevo | Versailler Vertrag | Russische Revolution | Balkankriege
 Welche mathematische Konstante ist die Basis des natürlichen Logarithmus? | e | φ | i | π
 Wer entwickelte die Allgemeine Relativitätstheorie? | Albert Einstein | Galileo Galilei | Isaac Newton | Niels Bohr
 Was ist ein „Palindrom“? | Ein Wort, das vorwärts und rückwärts gleich ist | Ein Reimwort | Ein zusammengesetztes Wort | Ein Wort mit doppelter Bedeutung
@@ -9,6 +10,7 @@ Welcher Planet hat die meisten Monde im Sonnensystem (Stand aktuelles Wissen)? |
 Welche Sprache gehört NICHT zur romanischen Sprachfamilie? | Ungarisch | Spanisch | Französisch | Rumänisch
 Was misst die Richterskala? | Erdbebenstärke | Temperatur | Luftdruck | Windgeschwindigkeit
 Welcher dieser Philosophen ist ein Vertreter des Existentialismus? | Jean-Paul Sartre | Platon | John Locke | Immanuel Kant
+Welcher Konflikt brachte die Welt an den Rand eines Atomkriegs? | Kubakrise | Koreakrieg | Vietnamkrieg | Afghanistankrieg
 Was ist ein „Quasar“? | Ein grosses schwarzes Loch, das Licht aussendet | Ein schwarzes Loch ohne Masse | Ein Asteroidengürtel | Ein besonders großer Planet
 Welches dieser Werke stammt von William Shakespeare? | Macbeth | Die Räuber | Nathan der Weise | Faust
 Was beschreibt das „Pareto-Prinzip“? | 80/20-Regel | Gleichgewicht in Märkten | Evolutionäre Anpassung | Ursache-Wirkungs-Ketten
@@ -19,9 +21,11 @@ In welchem Organ des menschlichen Körpers wird Insulin produziert? | Bauchspeic
 Welcher dieser Begriffe stammt aus der Informatik? | Photosynthese | Algorithmus | Osmose | Gravitation
 Welches dieser Werke ist KEIN Drama von Friedrich Schiller? | Der Prozess | Die Räuber | Wilhelm Tell | Kabale und Liebe
 Welches Metall ist bei Raumtemperatur flüssig? | Quecksilber | Aluminium | Kupfer | Eisen
+Welches Ereignis führte zum Eintritt der USA in den 2. Weltkrieg? | Angriff auf Pearl Harbor | D-Day | Schlacht um England | Berlin-Blockade
 Welche Einheit misst elektrische Stromstärke? | Ampere | Ohm | Volt | Watt
 Wer war der erste Mensch im Weltraum? | Juri Gagarin | Buzz Aldrin | John Glenn | Neil Armstrong
 Was ist ein „Isotop“? | Atome mit gleicher Protonenzahl, aber unterschiedlicher Neutronenzahl | Atome mit unterschiedlicher Protonenzahl | Moleküle mit gleicher Masse | Ionen mit gleicher Ladung
+Welcher Film gehört zur „Indiana Jones“-Reihe? | Raiders of the Lost Ark | The Mummy | National Treasure | Tomb Raider
 Welcher Ozean ist der größte der Erde? | Pazifik | Arktischer Ozean | Atlantik | Indischer Ozean
 Wer schrieb „1984“? | George Orwell | Ray Bradbury | Jules Verne | Aldous Huxley
 Was ist ein „Blackout“ im Energienetz? | Ein kompletter Zusammenbruch der Stromversorgung | Ein Überspannungsschaden | Ein Softwarefehler | Ein kurzfristiger Stromausfall
@@ -29,81 +33,100 @@ Welcher dieser Staaten ist eine Inselnation? | Island | Norwegen | Vietnam | Por
 Was bedeutet „DNA“ ausgeschrieben? | Deoxyribonucleic Acid | Digital Network Array | Dual Nucleotide Assembly | Dynamic Neural Axis
 Welches dieser Tiere ist ein Säugetier? | Delfin | Adler | Eidechse | Hai
 Wer komponierte die „Zauberflöte“? | Wolfgang Amadeus Mozart | Franz Schubert | Ludwig van Beethoven | Johann Sebastian Bach
+Welches ist kein Lied von Mani Matter? | Fuessball | Bim Coiffeur | Ds Zündhölzli | Hemmige
 Welches Land hat die meisten offiziellen Amtssprachen? | Schweiz | Südafrika | Kanada | Indien
 Was ist ein „Tautologie“ in der Logik? | Eine immer wahre Aussage | Eine Hypothese | Ein mathematischer Beweis | Ein Widerspruch
 Welcher Planet rotiert am schnellsten um seine eigene Achse? | Jupiter | Merkur | Mars | Erde
 Wer entdeckte das Penicillin? | Alexander Fleming | Marie Curie | Gregor Mendel | Louis Pasteur
+Wer führte Regie bei „Jurassic Park“? | Steven Spielberg | George Lucas | James Cameron | Ridley Scott
 Was bezeichnet man als „Pyrrhussieg“? | Einen Sieg mit verheerenden eigenen Verlusten | Einen unerwarteten Sieg | Einen schnellen Sieg | Einen Sieg ohne Verluste
 Welches dieser Elemente ist ein Edelgas? | Helium | Wasserstoff | Sauerstoff | Stickstoff
 Welche Stadt war Hauptstadt des Byzantinischen Reiches? | Konstantinopel | Alexandria | Rom | Athen
 Was ist die SI-Einheit der Kraft? | Newton | Watt | Joule | Pascal
 Wer schrieb „Die Verwandlung“? | Franz Kafka | Thomas Mann | Hermann Hesse | Stefan Zweig
 Welches dieser Tiere kann regenerieren (z. B. Gliedmaßen nachwachsen lassen)? | Salamander | Adler | Elefant | Hund
+Was war die Stasi? | Geheimdienst der DDR | Armee der UdSSR | Partei der BRD | NATO-Einheit
 Was ist ein „Oxymoron“? | Zwei widersprüchliche Begriffe nebeneinander | Ein Reimschema | Eine Metapher | Ein übertriebenes Stilmittel
 Welcher dieser Staaten ist KEIN Mitglied der Europäischen Union? | Norwegen | Deutschland | Frankreich | Italien
 Was beschreibt die Halbwertszeit? | Die Zeit, in der die Hälfte eines radioaktiven Stoffes zerfällt | Die Zeit bis zur chemischen Reaktion | Die doppelte Lebensdauer eines Stoffes | Die Zeit, bis ein Stoff vollständig zerfällt
+Wer führte Regie bei „Pulp Fiction“? | Quentin Tarantino | Martin Scorsese | Steven Spielberg | David Fincher
 Wer war der erste Bundeskanzler der Bundesrepublik Deutschland? | Konrad Adenauer | Gerhard Schröder | Willy Brandt | Helmut Kohl
 Was ist „Photosynthese“? | Umwandlung von Lichtenergie in chemische Energie | Verdauung | Sauerstoffabbau | Zellteilung
+Wer führte Regie bei „Fight Club“? | David Fincher | Quentin Tarantino | Christopher Nolan | Ridley Scott
 Welches dieser Instrumente gehört zur Familie der Holzblasinstrumente? | Klarinette | Schlagzeug | Trompete | Violine
 Welche Zahl ist eine Primzahl? | 97 | 121 | 21 | 51
 Wer formulierte die Evolutionstheorie durch natürliche Selektion? | Charles Darwin | Alfred Wegener | Carl Linnaeus | Jean-Baptiste Lamarck
 Was ist die Hauptstadt von Australien? | Canberra | Perth | Sydney | Melbourne
 Welches chemische Symbol hat Gold? | Au | Gd | Go | Ag
+Welches ist kein Lied der Beatles? | Lemon Tree | Lucy in the Sky with Diamonds | Yesterday | Let it Be
 Was ist ein „Sonett“? | Ein Gedicht mit fester Form | Ein Theaterstück | Eine Kurzgeschichte | Ein Roman
 Welcher dieser Kontinente ist der kleinste? | Australien | Antarktika | Südamerika | Europa
 Wer war der Anführer der Sowjetunion während des Zweiten Weltkriegs? | Josef Stalin | Nikita Chruschtschow | Michail Gorbatschow | Wladimir Lenin
 Was ist ein „Neuron“? | Eine Nervenzelle | Ein Hormon | Ein Organ | Ein Muskel
 Welches dieser Länder liegt NICHT in Afrika? | Peru | Nigeria | Ägypten | Kenia
 Was misst ein Barometer? | Luftdruck | Luftfeuchtigkeit | Windstärke | Temperatur
+Welche Stadt wurde im August 1945 durch eine Atombombe zerstört? | Hiroshima | Tokio | Osaka | Kyoto
+Welche zweite Stadt wurde 1945 durch eine Atombombe zerstört? | Nagasaki | Kyoto | Seoul | Shanghai
 Wer komponierte die Sinfonie („Ode an die Freude“)? | Ludwig van Beethoven | Johannes Brahms | Wolfgang Amadeus Mozart | Joseph Haydn
 Was ist ein „Vakuum“? | Ein Raum ohne Materie | Ein Raum ohne Temperatur | Ein Raum ohne Licht | Ein Raum ohne Luftdruck
 Welcher dieser Begriffe gehört zur Wirtschaft? | Inflation | Photosynthese | Mutation | Osmose
+Wer sang „My Heart Will Go On“ (Titanic)? | Celine Dion | Whitney Houston | Mariah Carey | Madonna
 Welcher Fluss ist der längste der Welt (nach klassischer Lehrmeinung)? | Nil | Mississippi | Jangtse | Amazonas
 Was ist ein „Kibibyte“ (klassisch in Informatik)? | 1024 Bytes | 2048 Bytes | 100 Bytes | 512 Bytes
 Wer schrieb „Faust“? | Johann Wolfgang von Goethe | Gotthold Ephraim Lessing | Heinrich Heine | Friedrich Schiller
 Welche Einheit wird für Frequenz verwendet? | Hertz | Joule | Pascal | Volt
 Wer war der erste Präsident der Vereinigten Staaten? | George Washington | Thomas Jefferson | John Adams | Abraham Lincoln
+Was war die „Eiserne Vorhang“-Metapher? | Trennung Ost/West | Militärbasis | Waffe | Grenzzaun
 Was ist die Quadratwurzel von 144? | 12 | 14 | 10 | 11
 Welches dieser Elemente ist ein Halogen? | Chlor | Eisen | Helium | Natrium
 In welchem Jahr begann der Erste Weltkrieg? | 1914 | 1916 | 1918 | 1912
 Was ist ein „Metapher“? | Ein bildhafter Ausdruck ohne „wie“ | Ein Widerspruch | Ein Vergleich mit „wie“ | Eine Übertreibung
 Welcher dieser Staaten liegt in Südamerika? | Chile | Andorra | Monaco | Marokko
 Wer entwickelte die Gravitationstheorie? | Isaac Newton | Galileo Galilei | Nikola Tesla | Albert Einstein
+Welche neue Waffe wurde im Ersten Weltkrieg erstmals großflächig eingesetzt? | Giftgas | Atomwaffen | Raketen | Drohnen
 Was ist ein „Atomkern“? | Der zentrale Teil eines Atoms | Ein Molekül | Ein Elektron | Die äußere Hülle eines Atoms
 Welches dieser Tiere ist ein Reptil? | Schlange | Wal | Fledermaus | Frosch
 Welches ist das größte Organ des menschlichen Körpers? | Haut | Lunge | Herz | Leber
+Welcher Film enthält den Satz „I’ll be back“? | The Terminator | RoboCop | Predator | Die Hard
 Wer schrieb „Die Odyssee“? | Homer | Sophokles | Aristoteles | Platon
 Welches dieser Länder ist eine Monarchie? | Japan | Rumänien | Italien | Frankreich
 Was ist ein „Epos“? | Ein episches, erzählendes Werk | Ein Drama | Eine Kurzgeschichte | Ein Gedicht
 Welches Element hat das chemische Symbol „Sn“? | Zinn | Zink | Natrium | Silber
 Wer war der Autor von „Der kleine Prinz“ („Le Petit Prince“)? | Antoine de Saint-Exupéry | Albert Camus | Émile Zola | Victor Hugo
+Welches Militärbündnis gehörte zum Westen im kalten Krieg? | NATO | Warschauer Pakt | RGW | COMECON
 Was ist die Hauptstadt von Kanada? | Ottawa | Montreal | Toronto | Vancouver
 Welche Zahl ist irrational? | √2 | 4 | 1/2 | 0,25
 Welches dieser Tiere gehört zu den Amphibien? | Salamander | Schildkröte | Spinne | Taube
 Wer führte die Reformation in Deutschland an? | Martin Luther | Johannes Calvin | Ulrich Zwingli | Heinrich VIII.
 Was ist ein „Algorithmus“? | Eine Schritt-für-Schritt-Anleitung zur Problemlösung | Ein Netzwerk | Ein Computer | Eine Programmiersprache
+Wer ist bekannt als „Queen of Pop“? | Madonna | Whitney Houston | Celine Dion | Janet Jackson
 Welcher dieser Stoffe ist ein Kohlenwasserstoff? | CH₄ | NaCl | CO₂ | H₂O
 In welchem Land liegt die Stadt Machu Picchu? | Peru | Chile | Bolivien | Mexiko
 Wer war der erste Mensch auf dem Mond? | Neil Armstrong | Buzz Aldrin | Michael Collins | Juri Gagarin
 Welches dieser Länder liegt in Asien? | Ungarn | Iran | Türkei | Ägypten
 Was ist ein „Oxid“? | Eine Verbindung mit Sauerstoff | Eine Verbindung mit Wasserstoff | Eine Verbindung mit Kohlenstoff | Eine Verbindung mit Stickstoff
+Wann ereignete sich die Katastrophe von Tschernobyl? | 1986 | 1975 | 1991 | 1964
 Welcher dieser Begriffe stammt aus der Musik? | Allegro | Parabel | Hypothese | Vektor
 Wer schrieb „Krieg und Frieden“? | Leo Tolstoi | Anton Tschechow | Alexander Puschkin | Fjodor Dostojewski
 Was ist die Lichtgeschwindigkeit im Vakuum ungefähr? | 300.000 km/s | 450.000 km/s | 600.000 km/s | 150.000 km/s
 Welche Farbe hat eine „black box“ im Flugzeug tatsächlich? | Schwarz | Braun | Orange | Blau
 Wie viele Kontinente gibt es (klassische westliche Zählweise)? | 7 | 8 | 5 | 6
+
 Welches dieser Tiere gehört zoologisch zu den Fischen? | Hai | Robbe | Wal | Delfin
 Was ist schwerer: 1 kg Federn oder 1 kg Eisen? | Beides gleich schwer | Hängt von der Dichte ab | Federn | Eisen
 Welche dieser Zahlen ist die größte? | 0,999 | Alle sind gleich groß | 0,9 | 0,99
 In welchem Land wurde Napoleon Bonaparte geboren? | Italien | Spanien | Korsika | Frankreich
 Welche Aussage ist korrekt? | Blitze können denselben Ort mehrfach treffen | Blitze entstehen nur bei Regen | Blitze schlagen immer in den höchsten Punkt ein | Blitze schlagen nie zweimal an derselben Stelle ein
 Welche dieser Zahlen ist KEINE Primzahl? | 1 | 2 | 3 | 5
+Was bedeutet „MAD“ im Kalten Krieg? | gegenseitig gesicherte Zerstörung | militärische Allianz | Raketenprogramm | Geheimdienst
 Welche Seiten hat ein Dodekaeder insgesamt? | 12 | 4 | 6 | 8
 Was ist ein „Koala“ biologisch gesehen? | Beuteltier | Raubtier | Bär | Nagetier
 In welche Richtung zeigt eine Kompassnadel? | Magnetischer Nordpol | Immer exakt nach Norden | Zur Sonne | Geografischer Nordpol
+Welche Band ist bekannt für „Bohemian Rhapsody“? | Queen | The Beatles | Pink Floyd | The Rolling Stones
 Was ist die Hauptstadt der Türkei? | Ankara | Izmir | Bursa | Istanbul
 Welche dieser Aussagen über Gold ist korrekt? | Es ist ein Edelmetall und reagiert kaum | Es ist radioaktiv | Es rostet leicht | Es ist magnetisch
 Was passiert mit Wasser bei genau 0 °C (unter Normaldruck)? | Es kann gleichzeitig fest und flüssig sein | Es verdampft | Es ist immer flüssig | Es ist immer fest
+Welches Ziel hatte die Berliner Mauer? | Flucht verhindern | Angriff vorbereiten | Handel fördern | Kultur schützen
 Welche Aussage über die Zahl 0 ist korrekt? | Sie ist weder positiv noch negativ | Sie ist eine Primzahl | Sie ist irrational | Sie ist eine natürliche Zahl in allen Definitionen
 Wer entwickelte das heliozentrische Weltbild in seiner modernen Form? | Nikolaus Kopernikus | Johannes Kepler | Tycho Brahe | Galileo Galilei
 Was beschreibt das „Fermi-Paradoxon“? | Den Widerspruch zwischen hoher Wahrscheinlichkeit außerirdischen Lebens und fehlenden Beweisen | Die unerklärbare Stabilität von Atomen | Die Expansion des Universums | Die Unmöglichkeit von Zeitreisen
@@ -112,33 +135,40 @@ Welcher dieser Begriffe stammt aus der Spieltheorie? | Nash-Gleichgewicht | Phot
 Was ist die Hauptstadt von Brasilien? | Brasília | Salvador | Rio de Janeiro | São Paulo
 Welche dieser Größen ist dimensionslos? | Brechungsindex | Energie | Geschwindigkeit | Dichte
 Wer schrieb „Also sprach Zarathustra“? | Friedrich Nietzsche | Arthur Schopenhauer | Georg Wilhelm Friedrich Hegel | Immanuel Kant
+Wer war der letzte Staatschef der Sowjetunion? | Michail Gorbatschow | Leonid Breschnew | Josef Stalin | Nikita Chruschtschow
 Was beschreibt der Begriff „Entropie“ in der Thermodynamik am besten? | Maß für Unordnung oder Anzahl möglicher Zustände | Mittlere Geschwindigkeit von Teilchen | Fluss von Energie in einem System | Energieerhaltung
 Welche dieser Zahlen ist eine irrationale Zahl? | √3 | 0,125 | 0,75 | 2/3
 Welcher dieser Philosophen gilt als Begründer des Empirismus? | John Locke | Platon | Baruch Spinoza | René Descartes
 Was ist ein „Quorum“? | Mindestanzahl an Teilnehmern für Beschlussfähigkeit | Ein chemisches Element | Eine literarische Gattung | Eine mathematische Formel
+Was war der Holocaust? | systematischer Völkermord | Wirtschaftskrise | Militärbündnis | Friedensvertrag
 Welcher dieser Prozesse ist KEIN Teil der Zellatmung? | Photosynthese | Glykolyse | Citratzyklus | Atmungskette
 Welche Aussage zur Lichtgeschwindigkeit ist korrekt? | Sie ist konstant im Vakuum | Sie ist unendlich | Sie hängt von der Masse ab | Sie ist abhängig vom Beobachter im Vakuum
+Wer spielte Neo in „The Matrix“? | Keanu Reeves | Will Smith | Tom Cruise | Nicolas Cage
 Welche Aussage über Primzahlen ist korrekt? | Es gibt unendlich viele Primzahlen | Primzahlen sind immer gerade | Es gibt endlich viele Primzahlen | Jede ungerade Zahl ist eine Primzahl
 Wer formulierte das berühmte „Cogito, ergo sum“ („Ich denke, also bin ich“)? | René Descartes | Sokrates | Friedrich Nietzsche | Immanuel Kant
 Was ist ein „Neutronenstern“? | Ein extrem dichter Sternrest nach einer Supernova | Ein Planet ohne Atmosphäre | Ein schwarzes Loch | Ein Stern aus Wasserstoff
 Welche dieser Größen ist eine SI-Basiseinheit? | Meter | Watt | Newton | Joule
 Wer war der Begründer der Psychoanalyse? | Sigmund Freud | Alfred Adler | Ivan Pawlow | Carl Gustav Jung
+Welches Land startete Sputnik 1? | Sowjetunion | USA | China | Deutschland
 Was beschreibt das „Heisenbergsche Unschärfeprinzip“? | Ort und Impuls können nicht gleichzeitig exakt bestimmt werden | Licht ist eine Welle | Materie besteht aus Atomen | Energie kann nicht verloren gehen
 Welche dieser Zahlen ist eine perfekte Quadratzahl? | 64 | 72 | 96 | 48
 Was ist die Hauptstadt von Neuseeland? | Wellington | Christchurch | Hamilton | Auckland
 Welches dieser Elemente hat die Ordnungszahl 1? | Wasserstoff | Sauerstoff | Lithium | Helium
 Wer schrieb „Der Prozess“? | Franz Kafka | Thomas Mann | Hermann Hesse | Robert Musil
 Was ist ein „Paradoxon“? | Eine scheinbar widersprüchliche Aussage | Eine mathematische Formel | Eine wissenschaftliche Methode | Eine eindeutige Wahrheit
+Welches Ereignis löste den 2. Weltkrieg aus? | deutscher Überfall auf Polen | Angriff auf Frankreich | Anschluss Österreichs | Münchner Abkommen
 Welcher dieser Staaten ist flächenmäßig der größte? | Russland | Kanada | China | USA
 Was ist ein „Integral“ in der Mathematik? | Eine Fläche unter einer Kurve | Eine Gleichung | Eine Zahl ohne Dezimalstellen | Eine Ableitung
 Welche dieser Aussagen über Schwarze Löcher ist korrekt? | Sie senden kein Licht aus | Sie bestehen aus normaler Materie | Sie sind unendlich groß | Sie existieren nur theoretisch
 Wer entwickelte die Evolutionstheorie unabhängig von Charles Darwin ebenfalls? | Alfred Russel Wallace | Louis Pasteur | James Watson | Gregor Mendel
 Was beschreibt der Begriff „Photosynthese“ im Kern? | Aufbau von Glukose aus CO₂ und Wasser mithilfe von Licht | Zellteilung | Sauerstoffverbrauch | Abbau von Glukose
 Welche dieser Sprachen gehört NICHT zur indogermanischen Sprachfamilie? | Ungarisch | Spanisch | Deutsch | Russisch
+Wer spielte die Hauptrolle in „Titanic“? | Leonardo DiCaprio | Brad Pitt | Tom Cruise | Johnny Depp
 Wer war der erste Mensch, der den Südpol erreichte? | Roald Amundsen | Ernest Shackleton | James Cook | Robert Falcon Scott
 Was ist ein „Isomer“ in der Chemie? | Stoffe mit gleicher Summenformel, aber unterschiedlicher Struktur | Stoffe mit unterschiedlicher Summenformel | Stoffe ohne Struktur | Stoffe mit gleicher Struktur, aber unterschiedlicher Masse
 Welche dieser Größen wächst exponentiell? | 2^x | x + 2 | 2x | x²
 Wer schrieb „Die Kritik der reinen Vernunft“? | Immanuel Kant | Arthur Schopenhauer | Friedrich Nietzsche | Georg Wilhelm Friedrich Hegel
+Welcher Film enthält die Figur „Ellen Ripley“? | Alien | Blade Runner | The Matrix | Terminator 2
 Was beschreibt die Lichtbrechung? | Ablenkung von Licht beim Übergang zwischen Medien | Absorption von Licht | Streuung von Licht | Reflexion von Licht
 Welche dieser Aussagen zur Wahrscheinlichkeit ist korrekt? | Wahrscheinlichkeiten liegen zwischen 0 und 1 | Wahrscheinlichkeiten sind immer 0 oder 1 | Wahrscheinlichkeiten können größer als 1 sein | Wahrscheinlichkeiten können negativ sein
 Welcher dieser Begriffe stammt aus der Linguistik? | Morphem | Atom | Vektor | Molekül
